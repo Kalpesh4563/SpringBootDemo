@@ -38,4 +38,9 @@ public class DepartmentController {
 	public String deleteDept(@PathVariable("id") Long deptId){
 		return deptService.deleteDept(deptId);
 	}
+	
+	@GetMapping("/")
+	public String home() {
+		return "Welcome to home";
+	}
 }
