@@ -41,7 +41,7 @@ public class DepartmentController {
 	
 	@GetMapping("/")
 	public String home() {
-		return "Welcome to home";
+		return "Response updated........";
 	}
 	
 	@GetMapping("/deptCode/{deptCode}")
