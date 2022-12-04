@@ -14,4 +14,6 @@ public interface DepartmentService {
 
 	public String deleteDept(Long deptId);
 
+	public Department fetchByDeptCode(String deptCode);
+
 }

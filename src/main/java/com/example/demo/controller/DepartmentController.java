@@ -43,4 +43,9 @@ public class DepartmentController {
 	public String home() {
 		return "Welcome to home";
 	}
+	
+	@GetMapping("/deptCode/{deptCode}")
+	public Department fetchByDeptCode(@PathVariable("deptCode") String deptCode) {
+		return deptService.fetchByDeptCode(deptCode);
+	}
 }

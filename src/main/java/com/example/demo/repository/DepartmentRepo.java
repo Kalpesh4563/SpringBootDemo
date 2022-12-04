@@ -7,4 +7,6 @@ import com.example.demo.model.Department;
 @Repository
 public interface DepartmentRepo extends JpaRepository<Department, Long>{
 
+	public Department findBydeptCodeIgnoreCase(String deptCode);
+
 }

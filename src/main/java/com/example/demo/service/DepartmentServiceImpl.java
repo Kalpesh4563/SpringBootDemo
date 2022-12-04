@@ -34,4 +34,9 @@ public class DepartmentServiceImpl implements DepartmentService{
 		return "Deleted Successfully.....";
 	}
 
+	@Override
+	public Department fetchByDeptCode(String deptCode) {
+		return deptRepo.findBydeptCodeIgnoreCase(deptCode);
+	}
+
 }
