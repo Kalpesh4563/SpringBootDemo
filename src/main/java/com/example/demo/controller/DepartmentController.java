@@ -48,4 +48,10 @@ public class DepartmentController {
 	public Department fetchByDeptCode(@PathVariable("deptCode") String deptCode) {
 		return deptService.fetchByDeptCode(deptCode);
 	}
+
+	@GetMapping("/welcomeMsg")
+	public String welcomeMsg(){
+		return "welcome to spring boot..";
+	}
+
 }
