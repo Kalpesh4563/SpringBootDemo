@@ -1,11 +1,10 @@
 package com.example.demo.controller;
 
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.example.demo.model.Department;
 import com.example.demo.service.DepartmentService;
 
@@ -23,6 +22,21 @@ public class DepartmentController {
     @GetMapping("/depts")
     public List<Department> getAllDept(){
         return deptService.getAllDept();
+    }
+
+    @DeleteMapping("/depts/{deptId}")
+    public String deleteDept(@PathVariable Long deptId){
+        return deptService.deleteDept(deptId);
+    }
+
+    @GetMapping("/depts/{deptId}")
+    public Optional<Department> fetchDeptById(@PathVariable Long deptId){
+        return deptService.fetchDeptById(deptId);
+    }
+
+    @PutMapping("/depts/{deptId}")
+    public Department updateDept(@RequestBody Department dept, @PathVariable Long deptId){
+       return deptService.updateDept(dept,deptId);
     }
 
 }
